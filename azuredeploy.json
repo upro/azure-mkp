@@ -4,7 +4,7 @@
     "parameters": {
         "name": {
             "type": "string",
-            "defaultValue": "ManagedWebApp",
+            "defaultValue": "Beeshake",
             "metadata": {
                 "description": "Provide a name for the managed application"
             }
