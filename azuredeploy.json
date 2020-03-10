@@ -36,27 +36,52 @@
                 "description": "The Windows version for the VM. This will pick a fully patched image of this given Windows version."
             }
         },
-        "vmSize": {
+        "vmNamePrefix": {
             "type": "string",
-            "defaultValue": "Standard_A2_v2",
-            "allowedValues": [
-                "2008-R2-SP1",
-                "2012-Datacenter",
-                "2012-R2-Datacenter",
-                "2016-Nano-Server",
-                "2016-Datacenter-with-Containers",
-                "2016-Datacenter",
-                "2019-Datacenter"
-            ],
+            "defaultValue": "Beeshake",
             "metadata": {
-                "description": "Size of the virtual machine."
+                "description": "Assign a prefix for the VM name"
             }
         },
         "location": {
             "type": "string",
-            "defaultValue": "[resourceGroup().location]",
+            "defaultValue": "Central Europe",
+            "allowedValues": [
+                "West US",
+                "East US",
+                "East US 2",
+                "Central US",
+                "North Central US",
+                "South Central US",
+                "North Europe",
+                "West Europe",
+                "Central Europe",
+                "Brazil South",
+                "East Asia",
+                "Southeast Asia",
+                "Japan East",
+                "Japan West",
+                "Australia East",
+                "Australia Southeast",
+                "Central India",
+                "South India"
+            ],
             "metadata": {
-                "description": "Location for all resources."
+                "description": "Select the Azure region for the resources"
+            }
+        },
+        "vmSize": {
+            "type": "string",
+            "defaultValue": "B1ms",
+            "allowedValues": [
+                "B1ms",
+                "B2s",
+                "B2ms",
+                "B4ms",
+                "D4_v3"
+            ],
+            "metadata": {
+                "description": "Select the vm size"
             }
         }
     },
