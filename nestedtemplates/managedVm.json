@@ -4,6 +4,7 @@
     "parameters": {
         "vmNamePrefix": {
             "type": "string",
+            "defaultValue": "Beeshake",
             "metadata": {
                 "description": "Assign a prefix for the VM name"
             }
@@ -11,13 +12,40 @@
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
+            "allowedValues": [
+                "West US",
+                "East US",
+                "North Europe",
+                "West Europe",
+                "Central Europe",
+                "Brazil South",
+                "East Asia",
+                "Southeast Asia",
+                "North Central US",
+                "South Central US",
+                "Japan East",
+                "Japan West",
+                "Australia East",
+                "Australia Southeast",
+                "Central US",
+                "East US 2",
+                "Central India",
+                "South India"
+            ],
             "metadata": {
                 "description": "Select the Azure region for the resources"
             }
         },
         "vmSize": {
             "type": "string",
-            "defaultValue": "Standard_D1_v2",
+            "defaultValue": "B1ms",
+            "allowedValues": [
+                "B1ms",
+                "B2s",
+                "B2ms",
+                "B4ms",
+                "D4_v3"
+            ],
             "metadata": {
                 "description": "Selec the vm size"
             }
@@ -235,7 +263,7 @@
                     "type": "extensions",
                     "apiVersion": "2017-03-30",
                     "name": "PowerShellDSC",
-                    "location": "[parameters('location')]",                
+                    "location": "[parameters('location')]",
                     "dependsOn": [
                         "[resourceId('Microsoft.Compute/virtualMachines/', concat(parameters('vmNamePrefix'), '-app'))]"
                     ],
@@ -257,7 +285,7 @@
                     "location": "[parameters('location')]",
                     "dependsOn": [
                         "[resourceId('Microsoft.Compute/virtualMachines/', concat(parameters('vmNamePrefix'), '-app'))]"
-                    ],                    
+                    ],
                     "properties": {
                         "autoUpgradeMinorVersion": true,
                         "typeHandlerVersion": "1.0",
