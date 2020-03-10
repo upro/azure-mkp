@@ -38,7 +38,14 @@
         },
         "vmSize": {
             "type": "string",
-            "defaultValue": "Standard_A2_v2",
+            "defaultValue": "B1ms",
+            "allowedValues": [
+                "B1ms",
+                "B2s",
+                "B2ms",
+                "B4ms",
+                "D4_v3"
+            ],
             "metadata": {
                 "description": "Size of the virtual machine."
             }
@@ -194,7 +201,7 @@
                     },
                     "dataDisks": [
                         {
-                            "diskSizeGB": 1023,
+                            "diskSizeGB": 64,
                             "lun": 0,
                             "createOption": "Empty"
                         }
