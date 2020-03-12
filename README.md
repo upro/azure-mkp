@@ -47,3 +47,5 @@ az managedapp definition create \
   --authorizations "<userOrGroupId>:<RBACRoleDefinitionId>" \
   --package-file-uri "https://raw.githubusercontent.com/Azure/azure-managedapp-samples/master/samples/201-managed-web-app/managedwebapp.zip"
 ````
+
+
